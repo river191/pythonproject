@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<title>Text Extractor</title>
+<h1 style="color:black;" align = "center">Text OCR</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='main.css') }}">
+       
+</head>
+<br>
+<br>
+<body>
+    <center>
+
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.photo(multiple="multiple")}}
+        {% for error in form.photo.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        {{ form.submit }}
+    </form>
+    </center>
+
+<br>
+
+<div class="boxed">
+    
+        {% if text  %}
+            <p style="color:black;" align ="center"> The extracted text from the image is: </p>
+            <p style="color:black;" align ="center">  <b> {{ text }} </b></p>
+        
+        {% else %}
+            <p style="color:black;" align ="center"> Upload an image to get text! </b></p>
+            
+        {% endif %}
+    
+</div> 
+
+<body>
+    <center>
+        
+        <p>
+            <a href="{{ url_for('download_file')}}"><button type="submit">Download</button></a>
+        </p>
+
+    </center>
+</body>
+<br>
+<body>
+    <center>
+
+        <p>
+            <a href="{{ url_for('clear_session')}}"><button type="reset">Clear Data</button></a>
+        </p>
+        <p style="color:red;" align ="center"> Clear your data at the end of the Session</p>
+
+    </center>
+</body>
+
+
+
+</body>
+

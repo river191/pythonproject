@@ -1,0 +1,36 @@
+body {
+    background: rgb(255, 255, 255);
+    /* font-family: "Times New Roman", Times, serif; */
+    font-family: "Lucida Console", "Courier New", monospace;
+    /* text-align: center; */
+    color: #494646;
+    margin-top: 5rem;
+  }
+
+
+
+input[type=submit]:hover {
+  background-color:lightgray;
+} 
+
+
+input[type=file]:hover {
+  background-color: gray;
+}
+
+button:hover {
+  background-color: lightgray;
+}
+
+.boxed {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-right: 300px;
+  margin-left: 300px;
+  padding: 20px;
+  /* margin: 20px; */
+  /* width: 300px; */
+  text-align: center;
+  border-radius: 15px;
+  border: 3px solid black ;
+} 

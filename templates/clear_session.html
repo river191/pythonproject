@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<title>Text Extractor</title>
+<h1 style="color:black;" align = "center">Thank You For Using Text Extractor!</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='main.css') }}">
+       
+</head>
+<body>
+
+   
+    {% if text  %}
+        <p style="color:red;" align ="center"> Your Data is NOT cleared. Refresh the page </p>
+
+    {% else %}
+        <h2 style="color:black;" align ="center"> Your Data is cleared </h2>
+        <br>
+        <br>
+        <p style="color:black;" align ="center">  <b> Return to the Home Page to upload a New Image  </b></p>
+        <p style="color:black;" align ="center">  <b> {{ text }} </b></p>
+ 
+    {% endif %}
+<br>
+
+    <center>
+            <a href="{{ url_for('upload_file')}}"><button type="submit">Home Page</button></a>
+    </center>
+</body>
